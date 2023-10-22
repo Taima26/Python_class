@@ -46,5 +46,8 @@ def price_counter(order):
             return("Wrong input")
     return result
 
-
-
+combos = {
+    combo["id"]: combo
+    for combo in combos
+}
+print (combos)
