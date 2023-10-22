@@ -1,3 +1,4 @@
+from exceptions import MealTooBig
 import json
 data = json.load(open("data.json"))
 meals = data["meals"]
@@ -28,6 +29,8 @@ def cal_counter(order):
             result += cal_counter(combos[id].get("meals"))
         elif choice not in meals_dic and choice not in combo_dic:
             return("Wrong input")
+    if result > 2000:
+        raise MealTooBig(result)
     return result
 
 def price_counter(order):
